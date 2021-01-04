@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% if category_list %}
+        <div class="row mt-4">
+        {% for category in category_list %}
+
+            <div class="col-sm-4 mt-2">
+                <div class="text-center alert alert-primary mb-1" role="alert">
+                    <h3>{{ category.name }}</h3>
+                </div>
+                {% for task in category.task_set.all %}
+                    <button class="accordion">{{ task.title }}</button>
+                        <div class="panel mb-1">
+                            <p class="mt-3">{{ task.description }}</p>
+
+                                <div class="row">
+                                  <div class="col-sm">
+                                    <div class="alert alert-danger" role="alert">End Date: {{ task.enddate }}</div>
+                                    <button type="button" class="btn btn-danger mb-2">Delete</button>
+                                    <button type="button" class="btn btn-success mb-2">Mark As Completed</button>
+                                  </div>
+                                </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+        </div>
+    {% else %}
+    <div class="alert alert-warning" role="alert">No task category to show.</div>
+    {% endif %}
+</div>
+
+{% comment %}
+<!-- example template -->
+<!-- <div class="container">
+
+  <div class="row mt-2">
+    <div class="col-sm">
+        <div class="text-center alert alert-primary mb-1" role="alert">
+            <h3>College</h3>
+        </div>
+
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="mb-2">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="alert alert-danger" role="alert">End Date: 7th Feb, 2020</div>
+                  <button type="button" class="btn btn-success">Delete</button>
+                </div>
+              </div>
+          </div>
+        </div>
+        <button class="accordion">Section 3</button>
+        <div class="panel mb-2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="text-center alert alert-primary mb-1" role="alert">
+            <h3>Side Income</h3>
+        </div>
+
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="mb-2">
+              <button type="button" class="btn btn-danger">7th Feb</button>
+              <button type="button" class="btn btn-success">Delete</button>
+          </div>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel mb-2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="text-center alert alert-primary mb-1" role="alert">
+            <h3>Programming</h3>
+        </div>
+
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="mb-2">
+              <button type="button" class="btn btn-danger">7th Feb</button>
+              <button type="button" class="btn btn-success">Delete</button>
+          </div>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel mb-2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+
+  </div>
+</div> -->
+{% endcomment %}
+
+
+{% endblock content %}
