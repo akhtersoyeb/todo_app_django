@@ -1,6 +1,9 @@
 # todo_app_django
 A simple to do app created with django
 
+### SCREENSHOT OF FINAL OUTCOME
+![Screen shot of final outcome](/images/Screenshot_2021-01-04%20WebTodo.png)
+
 ### GETTING STARTED
 
 1. **cd into the folder**
