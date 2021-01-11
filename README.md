@@ -30,9 +30,9 @@ $ python manage.py runserver
 ```
 6. **open browser and open:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-7. **Want to add questions and choices?**
+7. **Want to add tasks and categories?**
 ```
-$ python manage.py create superuser
+$ python manage.py createsuperuser
 ```
 enter name, email, and password whatever you want
 
